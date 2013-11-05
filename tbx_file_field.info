@@ -1,0 +1,4 @@
+name = Tbx file field
+description = Let only logged in users see uploaded files.
+core = 7.x
+files[] = tests/tbx_file_field.test

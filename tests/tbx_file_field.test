@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file 
+ * Contains tests for the Tbx file field module.
+ */
+
+/**
+ * Test case.
+ */
+class TbxFileFieldTestCase extends DrupalWebTestCase {
+
+  /**
+   * Implements getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('Tbx file field tests'),
+      'description' => t('TODO: write me.'),
+      'group' => t('Tbx file field'),
+    );
+  }
+
+  /**
+   * Implements setUp().
+   */
+  function setUp() {
+    // Call the parent with an array of modules to enable for the test.
+    parent::setUp(array('tbx_file_field'));
+
+    // TODO: perform additional setup tasks here if required.
+  }
+
+  /**
+   * Test the module's functionality.
+   */
+  function testTodoChangeThisName() {
+    // TODO: write test!
+  }
+
+}
