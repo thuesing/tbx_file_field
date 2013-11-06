@@ -5,13 +5,18 @@
  * TODO: Enter file description here.
  */
 
-/**
- * Implements hook_node_view().
- */
-function tbx_file_field_node_view($node, $view_mode, $langcode) {
-  $node->content['my_additional_field'] = array(
-    '#markup' => $additional_field,
-    '#weight' => 10,
-    '#theme' => 'mymodule_my_additional_field',
-  );
+
+
+function tbx_file_field_preprocess_node (&$vars) {
+	//kpr($vars);
+	if(!user_is_logged_in()) { # don't show file field
+	  $fields = field_read_fields(array('type' => 'file'));
+	  $field_names = array_keys($fields);
+	  foreach ($field_names as $field_name) {      	
+	  	if(!empty($vars[$field_name])) {
+	  		hide($vars['content'][$field_name]);
+	  	}
+	  }
+	} 
 }
+
